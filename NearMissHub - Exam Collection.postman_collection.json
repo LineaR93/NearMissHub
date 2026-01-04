@@ -1,0 +1,2893 @@
+{
+	"info": {
+		"_postman_id": "cb751fd9-d3a5-4ef1-9812-a213541d927b",
+		"name": "NearMissHub - Exam Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "51087788",
+		"_collection_link": "https://linear93-1663529.postman.co/workspace/52072e6c-7d59-493f-8b0e-4649727fb1d1/collection/51087788-cb751fd9-d3a5-4ef1-9812-a213541d927b?action=share&source=collection_link&creator=51087788"
+	},
+	"item": [
+		{
+			"name": "00 Setup (Users, Roles, Tokens)",
+			"item": [
+				{
+					"name": "01 POST Create User U1 (VALIDATOR bootstrap)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('u1_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{u1_name}}\",\n  \"surname\": \"{{u1_surname}}\",\n  \"email\": \"{{u1_email}}\",\n  \"password\": \"{{u1_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Bootstrap rule: the very first registered user becomes VALIDATOR. Use fresh DB or unique emails."
+					},
+					"response": []
+				},
+				{
+					"name": "02 POST Create User U2 (REPORTER)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('u2_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{u2_name}}\",\n  \"surname\": \"{{u2_surname}}\",\n  \"email\": \"{{u2_email}}\",\n  \"password\": \"{{u2_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Bootstrap rule: the very first registered user becomes VALIDATOR. Use fresh DB or unique emails."
+					},
+					"response": []
+				},
+				{
+					"name": "03 POST Create User U3 (REPORTER)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('u3_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{u3_name}}\",\n  \"surname\": \"{{u3_surname}}\",\n  \"email\": \"{{u3_email}}\",\n  \"password\": \"{{u3_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Bootstrap rule: the very first registered user becomes VALIDATOR. Use fresh DB or unique emails."
+					},
+					"response": []
+				},
+				{
+					"name": "04 POST Create User U4 (REPORTER)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('u4_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{u4_name}}\",\n  \"surname\": \"{{u4_surname}}\",\n  \"email\": \"{{u4_email}}\",\n  \"password\": \"{{u4_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Bootstrap rule: the very first registered user becomes VALIDATOR. Use fresh DB or unique emails."
+					},
+					"response": []
+				},
+				{
+					"name": "05 POST Create User U5 (REPORTER)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('u5_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{u5_name}}\",\n  \"surname\": \"{{u5_surname}}\",\n  \"email\": \"{{u5_email}}\",\n  \"password\": \"{{u5_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Bootstrap rule: the very first registered user becomes VALIDATOR. Use fresh DB or unique emails."
+					},
+					"response": []
+				},
+				{
+					"name": "11 POST Login U1 -> token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('t_u1', j['accessToken']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"{{u1_email}}\",\n  \"password\": \"{{u1_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 POST Login U2 -> token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('t_u2', j['accessToken']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"{{u2_email}}\",\n  \"password\": \"{{u2_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 POST Login U3 -> token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('t_u3', j['accessToken']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"{{u3_email}}\",\n  \"password\": \"{{u3_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14 POST Login U4 -> token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('t_u4', j['accessToken']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"{{u4_email}}\",\n  \"password\": \"{{u4_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15 POST Login U5 -> token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('t_u5', j['accessToken']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"{{u5_email}}\",\n  \"password\": \"{{u5_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "30 PATCH U2 role -> TRIAGER (by VALIDATOR U1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"role\": \"TRIAGER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/{{u2_id}}/role",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"{{u2_id}}",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "31 GET List users (VALIDATOR only)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "01 Categories, Area, Risk, Role",
+			"item": [
+				{
+					"name": "01 POST Create Category - Environment (VALIDATOR)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('c_environment_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Environment\",\n  \"description\": \"Environment hazards\",\n  \"type\": \"ENVIRONMENT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 POST Create Category - Safety (VALIDATOR)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('c_safety_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Safety\",\n  \"description\": \"Safety hazards\",\n  \"type\": \"SAFETY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 POST Create Category - Disorder (VALIDATOR)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('c_disorder_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Disorder\",\n  \"description\": \"Housekeeping hazards\",\n  \"type\": \"DISORDER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10 GET List categories (authenticated - U3 token)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.a GET List report-areas (authenticated - U3 token)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meta/report-areas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta",
+								"report-areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.b GET List risk-levels (authenticated - U3 token)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meta/risk-levels",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta",
+								"risk-levels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.c GET List roles (authenticated - U3 token)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meta/roles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.d GET List report-statuses (authenticated - U3 token)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meta/report-statuses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meta",
+								"report-statuses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02 Me (Profile, Password)",
+			"item": [
+				{
+					"name": "01 GET /me (U3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 PATCH /me update name + surname (U3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Giulia Updated\",\n  \"surname\": \"Verdi Updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 PATCH /me/profile-image set URL (U3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"profileImageUrl\": \"{{profileImageUrl_sample}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/me/profile-image",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"me",
+								"profile-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 PATCH /me/password change password (U3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));",
+									"pm.collectionVariables.set('u3_password', pm.collectionVariables.get('u3_new_password'));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"currentPassword\": \"{{u3_password}}\",\n  \"newPassword\": \"{{u3_new_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/me/password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"me",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 POST Login U3 again (with new password)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('t_u3', j['accessToken']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"{{u3_email}}\",\n  \"password\": \"{{u3_password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03 Reports (Create & Read)",
+			"item": [
+				{
+					"name": "01 POST Create Report R1 (U3 REPORTER)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('r1_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Forklift near miss in aisle 3\",\n  \"description\": \"Pallet moved unexpectedly during picking, no injuries.\",\n  \"area\": \"WAREHOUSE\",\n  \"location\": \"Aisle 3\",\n  \"riskLevel\": \"MEDIUM\",\n  \"categoryId\": \"{{c_environment_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 POST Create Report R2 (U4 REPORTER)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('r2_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u4}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Oil spill near machine\",\n  \"description\": \"Small oil spill noticed near press machine; cleaned after report.\",\n  \"area\": \"PRODUCTION\",\n  \"location\": \"Press line 2\",\n  \"riskLevel\": \"HIGH\",\n  \"categoryId\": \"{{c_safety_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 POST Create Report R3 (U5 REPORTER)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('r3_id', j['id']);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u5}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Loose cable in corridor\",\n  \"description\": \"Extension cable across corridor could cause tripping.\",\n  \"area\": \"MAINTENANCE\",\n  \"location\": \"Main corridor\",\n  \"riskLevel\": \"LOW\",\n  \"categoryId\": \"{{c_disorder_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10 GET Report R1 by creator (U3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11 GET Report R1 by VALIDATOR (U1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 GET Report R2 by VALIDATOR (U1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r2_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r2_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 GET Report R3 by VALIDATOR (U1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r3_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r3_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "20 GET List reports (VALIDATOR sees all)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports?sortBy=createdAt&sortDir=desc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04 Workflow (Submit, Assign, Status, History)",
+			"item": [
+				{
+					"name": "01 POST Create comment on R1 (U3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+									"let j = pm.response.json();",
+									"pm.collectionVariables.set('comment_id', j['id']);"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"text\": \"I noticed the pallet was unstable before moving it.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "01 POST Submit R1 (only creator U3)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/submit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 PATCH Set category of R1 (TRIAGER U2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"categoryId\": \"{{c_disorder_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/category",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 PUT Assign R1 to VALIDATOR U1 (TRIAGER U2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"assignedToUserId\": \"{{u1_id}}\",\n  \"note\": \"Please validate this report ASAP\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/assignment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"assignment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 GET List comments on R1 (VALIDATOR U1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 PATCH Change status R1 -> IN_REVIEW (VALIDATOR U1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"toStatus\": \"IN_REVIEW\",\n  \"note\": \"Starting validation\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 PATCH Change status R1 -> COMPLETED (VALIDATOR U1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"toStatus\": \"COMPLETED\",\n  \"note\": \"Validated and closed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06 GET Status history (VALIDATOR U1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/status-history",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"status-history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "[MANUAL - To select file]",
+			"item": [
+				{
+					"name": "01 [MANUAL - To select file] POST Upload profile image (VALIDATOR U1) -> /me/profile-image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/me/profile-image",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"me",
+								"profile-image"
+							]
+						},
+						"description": "In Postman: Body -> form-data -> pick a local image file. Requires Cloudinary configured."
+					},
+					"response": []
+				},
+				{
+					"name": "02 [MANUAL - To select file] POST Upload attachment for R1 (U3 owner) -> /reports/{id}/attachments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status is 200 or 5xx depending on storage config', function(){",
+									"  pm.expect([200,500,502]).to.include(pm.response.code);",
+									"});",
+									"if(pm.response.code===200){",
+									"  let j = pm.response.json();",
+									"  pm.collectionVariables.set('r1_attachment_id', j.id);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/attachments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"attachments"
+							]
+						},
+						"description": "Pick a file. If upload succeeds, r1_attachment_id will be stored for delete tests."
+					},
+					"response": []
+				},
+				{
+					"name": "03 [MANUAL - To select file] POST Upload attachment for R2 (U4 owner) -> /reports/{id}/attachments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status is 200 or 5xx depending on storage config', function(){",
+									"  pm.expect([200,500,502]).to.include(pm.response.code);",
+									"});",
+									"if(pm.response.code===200){",
+									"  let j = pm.response.json();",
+									"  pm.collectionVariables.set('r2_attachment_id', j.id);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u4}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r2_id}}/attachments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r2_id}}",
+								"attachments"
+							]
+						},
+						"description": "Pick a file. If upload succeeds, r2_attachment_id will be stored for delete tests."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "05 Attachments (List/Delete)",
+			"item": [
+				{
+					"name": "01 GET List attachments of R1 (U3 owner)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/attachments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"attachments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 GET List attachments of R2 (U4 owner)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u4}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r2_id}}/attachments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r2_id}}",
+								"attachments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 DELETE R1 attachment (U3) [needs r1_attachment_id]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status is 200 or 404 (if r1_attachment_id not set)', function(){",
+									"  pm.expect([200,404]).to.include(pm.response.code);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/attachments/{{r1_attachment_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"attachments",
+								"{{r1_attachment_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 DELETE R2 attachment (U4) [needs r2_attachment_id]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Status is 200 or 404 (if r2_attachment_id not set)', function(){",
+									"  pm.expect([200,404]).to.include(pm.response.code);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u4}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r2_id}}/attachments/{{r2_attachment_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r2_id}}",
+								"attachments",
+								"{{r2_attachment_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "06 KPI",
+			"item": [
+				{
+					"name": "01 GET KPI - reports by status (VALIDATOR only)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/kpi/reports/by-status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"kpi",
+								"reports",
+								"by-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 GET KPI - reports by category (VALIDATOR only)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/kpi/reports/by-category",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"kpi",
+								"reports",
+								"by-category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "[CHECKING AUTH]",
+			"item": [
+				{
+					"name": "01 [CHECKING AUTH] U4 tries to GET R1 (not owner) -> 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 403', () => pm.response.to.have.status(403));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u4}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 [CHECKING AUTH] U4 tries to SUBMIT R1 (not creator) -> 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 403', () => pm.response.to.have.status(403));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u4}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/submit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 [CHECKING AUTH] U3 tries to change status (VALIDATOR-only) -> 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 403', () => pm.response.to.have.status(403));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"toStatus\": \"IN_REVIEW\",\n  \"note\": \"Trying to cheat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 [CHECKING AUTH] U2 tries KPI (VALIDATOR-only) -> 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 403', () => pm.response.to.have.status(403));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/kpi/reports/by-status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"kpi",
+								"reports",
+								"by-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 [CHECKING AUTH] Missing token on /me -> 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 401', () => pm.response.to.have.status(401));"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06 [CHECKING AUTH] U5 tries to LIST R1 attachments (not owner) -> 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 403', () => pm.response.to.have.status(403));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u5}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/attachments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"attachments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07 [CHECKING AUTH] U3 tries to LIST R2 attachments (not owner) -> 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 403', () => pm.response.to.have.status(403));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u3}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r2_id}}/attachments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r2_id}}",
+								"attachments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08 [CHECKING AUTH] TRIAGER U2 can LIST R1 attachments -> 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r1_id}}/attachments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r1_id}}",
+								"attachments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09 [CHECKING AUTH] VALIDATOR U1 can LIST R2 attachments -> 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test('Expect 200', () => pm.response.to.have.status(200));"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{t_u1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/{{r2_id}}/attachments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"{{r2_id}}",
+								"attachments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "u1_name",
+			"value": "Roberto"
+		},
+		{
+			"key": "u1_surname",
+			"value": "Senatore"
+		},
+		{
+			"key": "u1_email",
+			"value": "s00013224@epicode.edu.mt"
+		},
+		{
+			"key": "u1_password",
+			"value": "Passw0rd!"
+		},
+		{
+			"key": "u2_name",
+			"value": "Luca"
+		},
+		{
+			"key": "u2_surname",
+			"value": "Bianchi"
+		},
+		{
+			"key": "u2_email",
+			"value": "u2.triager@mail.com"
+		},
+		{
+			"key": "u2_password",
+			"value": "Passw0rd!"
+		},
+		{
+			"key": "u3_name",
+			"value": "Giulia"
+		},
+		{
+			"key": "u3_surname",
+			"value": "Verdi"
+		},
+		{
+			"key": "u3_email",
+			"value": "u3.reporter@mail.com"
+		},
+		{
+			"key": "u3_password",
+			"value": "Passw0rd!"
+		},
+		{
+			"key": "u3_new_password",
+			"value": "N3wPassw0rd!"
+		},
+		{
+			"key": "u4_name",
+			"value": "Sara"
+		},
+		{
+			"key": "u4_surname",
+			"value": "Neri"
+		},
+		{
+			"key": "u4_email",
+			"value": "u4.reporter@mail.com"
+		},
+		{
+			"key": "u4_password",
+			"value": "Passw0rd!"
+		},
+		{
+			"key": "u5_name",
+			"value": "Paolo"
+		},
+		{
+			"key": "u5_surname",
+			"value": "Gialli"
+		},
+		{
+			"key": "u5_email",
+			"value": "u5.reporter@mail.com"
+		},
+		{
+			"key": "u5_password",
+			"value": "Passw0rd!"
+		},
+		{
+			"key": "profileImageUrl_sample",
+			"value": "https://example.com/nearmisshub/300.jpg"
+		},
+		{
+			"key": "u1_id",
+			"value": ""
+		},
+		{
+			"key": "u2_id",
+			"value": ""
+		},
+		{
+			"key": "u3_id",
+			"value": ""
+		},
+		{
+			"key": "u4_id",
+			"value": ""
+		},
+		{
+			"key": "u5_id",
+			"value": ""
+		},
+		{
+			"key": "t_u1",
+			"value": ""
+		},
+		{
+			"key": "t_u2",
+			"value": ""
+		},
+		{
+			"key": "t_u3",
+			"value": ""
+		},
+		{
+			"key": "t_u4",
+			"value": ""
+		},
+		{
+			"key": "t_u5",
+			"value": ""
+		},
+		{
+			"key": "c_environment_id",
+			"value": ""
+		},
+		{
+			"key": "c_safety_id",
+			"value": ""
+		},
+		{
+			"key": "c_disorder_id",
+			"value": ""
+		},
+		{
+			"key": "r1_id",
+			"value": ""
+		},
+		{
+			"key": "r2_id",
+			"value": ""
+		},
+		{
+			"key": "r3_id",
+			"value": ""
+		},
+		{
+			"key": "r1_attachment_id",
+			"value": ""
+		},
+		{
+			"key": "r2_attachment_id",
+			"value": ""
+		},
+		{
+			"key": "comment_id",
+			"value": ""
+		}
+	]
+}
